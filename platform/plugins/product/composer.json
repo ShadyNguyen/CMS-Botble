@@ -1,0 +1,20 @@
+{
+  "name": "botble/product-items",
+  "description": "ProductItems package",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Botble\\ProductItems\\": "src"
+    }
+  },
+  "require": {
+
+  },
+  "extra":{
+    "laravel":{
+      "providers":[
+        "Botble\\ProductItems\\Providers\\ProductItemsServiceProvider"
+      ]
+    }
+  }
+}
