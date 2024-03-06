@@ -23,23 +23,6 @@ class ProductItemsForm extends FormAbstract
                     'data-counter' => 120,
                 ],
             ])
-            ->add('description', 'editor', [
-                'label'=> __('Description'),
-                'label_attr' => ['class' => 'control-label'],
-                'attr' => [
-                    'with-short-code' => false, // if true, it will add a button to select shortcode
-                    'without-buttons' => false, // if true, all buttons will be hidden
-                ],
-            ])
-            ->add('price', 'number', [ // you can change "text" to "password", "email", "number" or "textarea"
-                'label' => __('Price'),
-                'label_attr' => ['class' => 'control-label required'], // Add class "required" if that is mandatory field
-                'attr' => [
-                    'placeholder' => __('Price...'),
-                    'data-counter' => 120, // Maximum characters
-                ],
-            ])
-
             ->add('status', 'customSelect', [
                 'label' => trans('core/base::tables.status'),
                 'label_attr' => ['class' => 'control-label required'],
@@ -47,19 +30,6 @@ class ProductItemsForm extends FormAbstract
                     'class' => 'form-control select-full',
                 ],
                 'choices' => BaseStatusEnum::labels(),
-            ])
-            ->add('image', 'mediaImage', [
-                'label' => __('Image'),
-                'label_attr' => ['class' => 'control-label'],
-            ])
-            ->add('category_id', 'customSelect', [ // Change "select" to "customSelect" for better UI
-                'label' => __('Category'),
-                'label_attr' => ['class' => 'control-label required'], // Add class "required" if that is mandatory field
-                'choices'    => [
-                    1 => __('Option 1'),
-                    2 => __('Option 2'),
-
-                ],
             ])
             ->setBreakFieldPoint('status');
     }

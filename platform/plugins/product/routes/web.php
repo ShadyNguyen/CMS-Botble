@@ -23,8 +23,8 @@ Route::group(['namespace' => 'Botble\Product\Http\Controllers', 'middleware' => 
                 'permission' => 'product-categories.destroy',
             ]);
         });
-        Route::group(['prefix' => 'product-items', 'as' => 'product-items.'], function () {       
-            Route::resource('', 'ProductItemsController')->parameters(['' => 'product-items']);   
+        Route::group(['prefix' => 'product-items', 'as' => 'product-items.'], function () {
+            Route::resource('', 'ProductItemsController')->parameters(['' => 'product-items']);
             Route::delete('items/destroy', [
                 'as' => 'deletes',
                 'uses' => 'ProductItemsController@deletes',
@@ -32,5 +32,4 @@ Route::group(['namespace' => 'Botble\Product\Http\Controllers', 'middleware' => 
             ]);
         });
     });
-
 });

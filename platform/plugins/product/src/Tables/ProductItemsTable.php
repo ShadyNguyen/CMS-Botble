@@ -36,24 +36,11 @@ class ProductItemsTable extends TableAbstract
     {
         $data = $this->table
             ->eloquent($this->query())
-            ->with('category') // Eager load the category relationship
             ->editColumn('name', function (ProductItems $item) {
                 if (!Auth::user()->hasPermission('product-items.edit')) {
                     return BaseHelper::clean($item->name);
                 }
                 return Html::link(route('product-items.edit', $item->getKey()), BaseHelper::clean($item->name));
-            })
-            ->editColumn('image', function (ProductItems $item) {
-                return $this->displayThumbnail($item->image);
-            })
-            ->editColumn('description', function (ProductItems $item) {
-                return BaseHelper::clean($item->description); // Assuming description is a text field
-            })
-            ->editColumn('price', function (ProductItems $item) {
-                return number_format($item->price, 2); // Assuming price is a decimal field
-            })
-            ->editColumn('category', function (ProductItems $item) {
-                return $item->category->name ?? ''; // Display category name or an empty string if not available
             })
             ->editColumn('checkbox', function (ProductItems $item) {
                 return $this->getCheckbox($item->getKey());
@@ -71,22 +58,17 @@ class ProductItemsTable extends TableAbstract
         return $this->toJson($data);
     }
 
-
     public function query(): Relation|Builder|QueryBuilder
     {
         $query = $this
             ->getModel()
             ->query()
             ->select([
-                'id',
-                'name',
-                'image',
-                'description',
-                'price',
-                'category_id',
-                'created_at',
-                'status',
-            ]);
+               'id',
+               'name',
+               'created_at',
+               'status',
+           ]);
 
         return $this->applyScopes($query);
     }
@@ -101,20 +83,6 @@ class ProductItemsTable extends TableAbstract
             'name' => [
                 'title' => trans('core/base::tables.name'),
                 'class' => 'text-start',
-            ],
-            'image' => [
-                'image' => trans('core/base::tables.image'),
-                'width' =>'20px',
-            ],
-            'category_id' => [
-                'category_id' => trans('core/base::tables.category_id'),
-
-            ],
-            'description' => [
-                'description' => trans('core/base::tables.description'),
-            ],
-            'price' => [
-                'price' => trans('core/base::tables.price'),
             ],
             'created_at' => [
                 'title' => trans('core/base::tables.created_at'),
@@ -145,14 +113,6 @@ class ProductItemsTable extends TableAbstract
                 'type' => 'text',
                 'validate' => 'required|max:120',
             ],
-            'category_id' => [
-                'title' =>'Category',
-                'type' => 'select',
-                'choices' => BaseStatusEnum::labels(),
-                'validate' => 'required|in:' . implode(',', BaseStatusEnum::values()),
-
-            ],
-            
             'status' => [
                 'title' => trans('core/base::tables.status'),
                 'type' => 'select',

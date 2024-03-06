@@ -12,9 +12,6 @@ class ProductItemsRequest extends Request
     {
         return [
             'name' => 'required|string|max:220',
-            'category_id' => 'required',
-            'price' => 'required',
-            'description' => 'nullable|string',
             'status' => Rule::in(BaseStatusEnum::values()),
         ];
     }

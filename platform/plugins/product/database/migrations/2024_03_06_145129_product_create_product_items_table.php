@@ -10,11 +10,6 @@ return new class () extends Migration {
         Schema::create('product_items', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->text('description');
-            $table->string('image');
-            $table->float('price',50);
-            $table->unsignedBigInteger('category_id',20);
-            $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade');
             $table->string('status', 60)->default('published');
             $table->timestamps();
         });
