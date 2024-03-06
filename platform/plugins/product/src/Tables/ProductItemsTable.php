@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Http\JsonResponse;
 use Botble\Table\DataTables;
+use Botble\Product\Models\ProductCategories;
 
 class ProductItemsTable extends TableAbstract
 {
@@ -148,7 +149,7 @@ class ProductItemsTable extends TableAbstract
             'category_id' => [
                 'title' =>'Category',
                 'type' => 'select',
-                'choices' => BaseStatusEnum::labels(),
+                'callback' => 'getCategories',
                 'validate' => 'required|in:' . implode(',', BaseStatusEnum::values()),
 
             ],
@@ -166,6 +167,10 @@ class ProductItemsTable extends TableAbstract
         ];
     }
 
+
+    public function getCategories() {
+        return ProductCategories::query()->pluck('id','name')->all();
+    }
     public function getFilters(): array
     {
         return $this->getBulkChanges();

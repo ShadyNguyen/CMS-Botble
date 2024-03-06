@@ -1,0 +1,38 @@
+{
+  "title": "Cài đặt chung",
+  "description": "Cấu hình các cài đặt chung cho plugin Product",
+  "sections": [
+    {
+      "title": "Thông tin chung",
+      "fields": [
+        {
+          "type": "text",
+          "name": "product_name",
+          "label": "Tên plugin",
+          "default": "Product",
+          "validation": "required",
+          "help": "Tên hiển thị của plugin"
+        },
+        {
+          "type": "textarea",
+          "name": "product_description",
+          "label": "Mô tả plugin",
+          "default": "Mô tả plugin Product",
+          "help": "Mô tả ngắn gọn về chức năng của plugin"
+        }
+      ]
+    },
+    {
+      "title": "Cài đặt plugin",
+      "fields": [
+        {
+          "type": "checkbox",
+          "name": "product_enable",
+          "label": "Kích hoạt plugin",
+          "default": "1",
+          "help": "Bật hoặc tắt plugin"
+        }
+      ]
+    }
+  ]
+}

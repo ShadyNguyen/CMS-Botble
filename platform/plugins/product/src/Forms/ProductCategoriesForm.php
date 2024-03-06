@@ -17,7 +17,7 @@ class ProductCategoriesForm extends FormAbstract
             ->withCustomFields()
             ->add('name', 'text', [
                 'label' => trans('core/base::forms.name'),
-                'label_attr' => ['class' => 'control-label required'],
+                'label_attr' => ['class' => 'control-label required focus'],
                 'attr' => [
                     'placeholder' => trans('core/base::forms.name_placeholder'),
                     'data-counter' => 120,

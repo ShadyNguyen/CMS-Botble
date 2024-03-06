@@ -5,7 +5,7 @@ use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
 use Botble\Blog\Models\Tag;
 use Botble\Slug\Facades\SlugHelper;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;   
 
 Route::group(['namespace' => 'Botble\Blog\Http\Controllers', 'middleware' => ['web', 'core']], function () {
     Route::group(['prefix' => BaseHelper::getAdminPrefix() . '/blog', 'middleware' => 'auth'], function () {

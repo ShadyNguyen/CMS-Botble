@@ -20,6 +20,7 @@
             reset-license-url="{{ route('settings.license.reset') }}"
             manage-license="{{ auth()->user()->hasPermission('core.manage.license') ? 'yes' : 'no' }}"
         ></license-component>
+
     </div>
 
     <div class="max-width-1200">

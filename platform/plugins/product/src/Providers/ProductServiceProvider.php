@@ -64,5 +64,17 @@ class ProductServiceProvider extends ServiceProvider
                 'permissions' => ['product-items.index'],
             ]);
         });
+
+        add_filter(BASE_FILTER_AFTER_SETTING_CONTENT, [$this, 'ProductSetting'], 200, 1);
+
+    }
+
+    
+    public function ProductSetting($data)
+    {
+        //dd($data);
+        return $data . view('plugins/product::setting')->render();
     }
 }
+
+

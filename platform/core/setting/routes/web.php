@@ -11,7 +11,6 @@ Route::group(['namespace' => 'Botble\Setting\Http\Controllers', 'middleware' => 
                 'uses' => 'SettingController@getOptions',
                 'permission' => 'settings.options',
             ]);
-
             Route::post('general/edit', [
                 'as' => 'settings.edit',
                 'uses' => 'SettingController@postEdit',

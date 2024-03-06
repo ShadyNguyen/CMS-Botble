@@ -15,6 +15,10 @@ Route::group(['namespace' => 'Botble\Product\Http\Controllers', 'middleware' => 
                 'permission' => 'product.destroy',
             ]);
         });
+        Route::group(['prefix' => 'settings'], function () {
+            Route::get('product', 'ProductSettingController@index')->name('settings.product');
+            Route::post('product', 'ProductSettingController@save')->name('settings.product.save');
+        }); 
         Route::group(['prefix' => 'product-categories', 'as' => 'product-categories.'], function () {
             Route::resource('', 'ProductCategoriesController')->parameters(['' => 'product-categories']);
             Route::delete('items/destroy', [
