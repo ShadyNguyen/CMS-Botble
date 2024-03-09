@@ -76,7 +76,7 @@ class ProductServiceProvider extends ServiceProvider
                 //route trỏ đến hiển thị form setting
                 'url'         => route('settings.product'),  
                 //Thiết lập quyền để sử dụng
-                // 'permissions' => ['settings.product'],              
+                'permissions' => ['settings.product'],              
             ]);
         });
 

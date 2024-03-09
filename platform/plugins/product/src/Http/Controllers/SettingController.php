@@ -19,10 +19,23 @@ use Botble\Product\Forms\SettingForm;
 
 class SettingController extends BaseController
 {
-    public function getSetting(SettingForm $form)
+    protected function saveSettings(array $data): void
+    {
+        foreach ($data as $settingKey => $settingValue) {
+            if (is_array($settingValue)) {
+                $settingValue = json_encode(array_filter($settingValue));
+            }
+
+            setting()->set($settingKey, (string)$settingValue);
+        }
+
+        setting()->save();
+    }
+
+    public function getSetting()
     {
         page_title()->setTitle('Product');
-        return $form->renderForm();
+        return view('plugins/product::index');
     }
 
     /**
