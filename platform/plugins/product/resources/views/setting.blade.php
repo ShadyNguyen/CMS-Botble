@@ -2,7 +2,7 @@
     :title="'Product'"
     :description="'Settings for Product'"
 >
-    <x-core-setting::checkbox
+    {{-- <x-core-setting::checkbox
         name="blog_post_schema_enabled"
         :label="trans('plugins/blog::base.settings.enable_blog_post_schema')"
         :checked="setting('blog_post_schema_enabled', true)"
@@ -19,7 +19,14 @@
             'BlogPosting' => 'BlogPosting'
         ]"
         :value="setting('blog_post_schema_type', 'NewsArticle')"
-    />
+    /> --}}
+
+    <x-core-setting::text-input 
+        name="product_save_data"
+        :label="'Test Save'"
+        :placeholder="'try it!!'"
+        :value="setting('product_save_data')"
+        />
 
     tesst
 </x-core-setting::section>

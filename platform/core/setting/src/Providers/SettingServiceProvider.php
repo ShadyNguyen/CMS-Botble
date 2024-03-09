@@ -92,6 +92,14 @@ class SettingServiceProvider extends ServiceProvider
                     'url' => route('settings.media'),
                     'permissions' => ['settings.media'],
                 ])
+                // ->registerItem([
+                //     'id' => 'cms-core-settings-product',
+                //     'priority' => 4,
+                //     'parent_id' => 'cms-core-settings',
+                //     'name' => 'Product',
+                //     'url' => route('settings.product'),
+                //     'permissions' => ['settings.product'],
+                // ])
                 ->registerItem([
                     'id' => 'cms-core-settings-cronjob',
                     'priority' => 999,
@@ -100,6 +108,7 @@ class SettingServiceProvider extends ServiceProvider
                     'url' => route('settings.cronjob'),
                     'permissions' => ['settings.cronjob'],
                 ]);
+               
 
             EmailHandler::addTemplateSettings('base', config('core.setting.email', []), 'core');
         });

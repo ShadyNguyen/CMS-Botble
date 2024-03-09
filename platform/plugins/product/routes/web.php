@@ -31,5 +31,29 @@ Route::group(['namespace' => 'Botble\Product\Http\Controllers', 'middleware' => 
                 'permission' => 'product-items.destroy',
             ]);
         });
+
+        Route::group(['prefix' => 'settings'], function () {
+            Route::get('product', [
+                'as'   => 'settings.product',
+                'uses' => 'SettingController@getSetting',
+            ]);
+        
+            Route::post('product', [
+                'as'         => 'settings.product.post',
+                'uses'       => 'SettingController@postSetting',
+                'permission' => 'settings.product',
+            ]);
+        });
+        // Route::get('media', [
+        //     'as' => 'settings.media',
+        //     'uses' => 'SettingController@getMediaSetting',
+        // ]);
+
+        // Route::post('media', [
+        //     'as' => 'settings.media.post',
+        //     'uses' => 'SettingController@postEditMediaSetting',
+        //     'permission' => 'settings.media',
+        //     'middleware' => 'preventDemo',
+        // ]);
     });
 });

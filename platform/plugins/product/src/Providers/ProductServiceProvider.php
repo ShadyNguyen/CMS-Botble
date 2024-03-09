@@ -63,13 +63,28 @@ class ProductServiceProvider extends ServiceProvider
                 'url' => route('product-items.index'),
                 'permissions' => ['product-items.index'],
             ]);
+            \Botble\Base\Facades\DashboardMenu::registerItem([
+                'id'          => 'cms-plugins-product-setting',
+                //Thiết lập vị trí hiển thị trong Menu
+                'priority'    => 0,                                 
+                //Thiết lập nằm trong menu nhỏ riêng
+                'parent_id'   => 'cms-core-settings',               
+                //Thiết lập tên hiển thị file lang/en/base.blade.php
+                'name'        => 'Product',  
+                //Tuỳ chỉnh icon hiển thị
+                'icon'        => null,                              
+                //route trỏ đến hiển thị form setting
+                'url'         => route('settings.product'),  
+                //Thiết lập quyền để sử dụng
+                // 'permissions' => ['settings.product'],              
+            ]);
         });
 
-        add_filter(BASE_FILTER_AFTER_SETTING_CONTENT,[$this, 'productSetting'],200 ,1);
+        // add_filter(BASE_FILTER_AFTER_SETTING_CONTENT,[$this, 'productSetting'],200 ,1);
     }
 
-    public function productSetting($data)
-    {
-        return $data . view('plugins/product::setting')->render();
-    }
+    // public function productSetting($data)
+    // {
+    //     return $data . view('plugins/product::setting')->render();
+    // }
 }
