@@ -8,8 +8,13 @@ return new class () extends Migration {
     public function up(): void
     {
         Schema::create('product_items', function (Blueprint $table) {
-            $table->id();
+            $table->id();  
             $table->string('name', 255);
+            $table->longText('description');
+            $table->float('price');
+            $table->string('image',555);
+            $table->unsignedBigInteger('category_id',20);
+            $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade'); 
             $table->string('status', 60)->default('published');
             $table->timestamps();
         });
