@@ -103,19 +103,17 @@ class ProductItemsTable extends TableAbstract
                 'title' => trans('core/base::tables.name'),
                 'class' => 'text-start',
             ],
-            'image' => [
-                'image' => trans('core/base::tables.image'),
-                'width' =>'20px',
-            ],
-            'category_id' => [
-                'category_id' => trans('core/base::tables.category_id'),
-
-            ],
             'description' => [
-                'description' => trans('core/base::tables.description'),
+                'description' => 'Description',
+                'class' => 'text-start',
+            ],
+            'image' => [
+                'image' => 'Image',
+                'class' => 'text-start',
             ],
             'price' => [
-                'price' => trans('core/base::tables.price'),
+                'price' => 'Price',
+                'class' => 'text-start',
             ],
             'created_at' => [
                 'title' => trans('core/base::tables.created_at'),
@@ -146,14 +144,10 @@ class ProductItemsTable extends TableAbstract
                 'type' => 'text',
                 'validate' => 'required|max:120',
             ],
-            'category_id' => [
-                'title' =>'Category',
-                'type' => 'select',
-                'callback' => 'getCategories',
-                'validate' => 'required|in:' . implode(',', BaseStatusEnum::values()),
-
+            'price' => [
+                'title' => 'Price',
+                'type' => 'float',    
             ],
-            
             'status' => [
                 'title' => trans('core/base::tables.status'),
                 'type' => 'select',
