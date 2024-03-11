@@ -10,6 +10,7 @@ Route::group(['controller' => JulyController::class, 'middleware' => ['web', 'co
 
         // Add your custom route here
         // Ex: Route::get('hello', 'getHello');
+        Route::get('/product',[JulyController::class,'getProduct'])->name('product');
 
     });
 });

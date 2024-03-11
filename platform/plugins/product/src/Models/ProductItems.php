@@ -12,11 +12,18 @@ class ProductItems extends BaseModel
 
     protected $fillable = [
         'name',
+        'description',
+        'price',
+
+        'image',
+        'category_id',
+        
         'status',
     ];
 
     protected $casts = [
         'status' => BaseStatusEnum::class,
         'name' => SafeContent::class,
+        'description' => SafeContent::class,
     ];
 }

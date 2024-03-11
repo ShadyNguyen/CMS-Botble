@@ -10,7 +10,7 @@ use Botble\Page\Models\Page;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request as IlluminateRequest;
-use Theme\Ripple\Fields\ThemeIconField;
+use Thetme\Ripple\Fields\ThemeIconField;
 
 register_page_template([
     'no-sidebar' => __('No sidebar'),
@@ -80,3 +80,32 @@ add_filter('form_custom_fields', function (FormAbstract $form, FormHelper $formH
 
     return $form;
 }, 29, 2);
+
+add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
+    if ($data instanceof \Botble\Blog\Models\Post) {
+        $test = $data->getMetaData('convert_image', true);
+    
+        $form
+            ->addAfter('image','convert_image', 'mediaImage', [
+                'label'      => __('Image'),
+                'label_attr' => ['class' => 'control-label'],
+                'value'      => $test,
+            ])
+            ->addAfter('content','embedded_video', 'textarea', [
+                'label'      => __('Convert_Video'),
+                'label_attr' => ['class' => 'control-label'],
+                'value'      =>$data->getMetaData('embedded_video', true),
+            ]);
+
+    }
+    
+    return $form;
+}, 120, 2);
+
+add_action([BASE_ACTION_AFTER_CREATE_CONTENT, BASE_ACTION_AFTER_UPDATE_CONTENT], function ($screen, $request, $data) {
+    if ($data instanceof \Botble\Blog\Models\Post) {
+        MetaBox::saveMetaBoxData($data, 'convert_image', $request->input('convert_image'));
+        MetaBox::saveMetaBoxData($data, 'embedded_video', $request->input('embedded_video'));
+
+    }
+}, 120, 3);

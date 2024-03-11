@@ -6,6 +6,10 @@ use Botble\Theme\Http\Controllers\PublicController;
 
 class JulyController extends PublicController
 {
+    public function getProduct()
+    {
+        
+    }
     public function getIndex()
     {
         return parent::getIndex();

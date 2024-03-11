@@ -36,6 +36,8 @@
         </div>
     </header>
     <div class="post__content">
+        <h1>{{ $post->getMetaData('convert_image', true); }} </h1>
+
         @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($post)))
             {!! render_object_gallery($galleries, ($post->first_category ? $post->first_category->name : __('Uncategorized'))) !!}
         @endif
