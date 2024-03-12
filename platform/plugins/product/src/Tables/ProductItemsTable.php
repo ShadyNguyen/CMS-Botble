@@ -21,7 +21,6 @@ class ProductItemsTable extends TableAbstract
     public function __construct(DataTables $table, UrlGenerator $urlGenerator, ProductItems $productItems)
     {
         parent::__construct($table, $urlGenerator);
-
         $this->model = $productItems;
 
         $this->hasActions = true;
@@ -50,8 +49,11 @@ class ProductItemsTable extends TableAbstract
             ->editColumn('description', function (ProductItems $item) {
                 return BaseHelper::clean($item->description); // Assuming description is a text field
             })
+            ->editColumn('quantity', function (ProductItems $item) {
+                return number_format($item->quantity, 2); // Assuming price is a decimal field
+            })
             ->editColumn('price', function (ProductItems $item) {
-                return number_format($item->price, 2); // Assuming price is a decimal field
+                return number_format($item->price, 3); // Assuming price is a decimal field
             })
             ->editColumn('category', function (ProductItems $item) {
                 return $item->category->name ?? ''; // Display category name or an empty string if not available
@@ -82,6 +84,7 @@ class ProductItemsTable extends TableAbstract
                 'id',
                 'name',
                 'image',
+                'quantity',
                 'description',
                 'price',
                 'category_id',
@@ -109,6 +112,10 @@ class ProductItemsTable extends TableAbstract
             ],
             'image' => [
                 'image' => 'Image',
+                'class' => 'text-start',
+            ],
+            'quantity' => [
+                'quantity' => 'Quantity',
                 'class' => 'text-start',
             ],
             'price' => [

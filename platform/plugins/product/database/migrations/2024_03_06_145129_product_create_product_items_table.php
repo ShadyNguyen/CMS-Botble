@@ -13,6 +13,7 @@ return new class () extends Migration {
             $table->longText('description');
             $table->float('price');
             $table->string('image',555);
+            $table->integer('quantity');
             $table->integer('category_id',20);
             $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade'); 
             $table->string('status', 60)->default('published');

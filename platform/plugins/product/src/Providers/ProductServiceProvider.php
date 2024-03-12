@@ -66,17 +66,17 @@ class ProductServiceProvider extends ServiceProvider
             \Botble\Base\Facades\DashboardMenu::registerItem([
                 'id'          => 'cms-plugins-product-setting',
                 //Thiết lập vị trí hiển thị trong Menu
-                'priority'    => 0,                                 
+                'priority'    => 1,
                 //Thiết lập nằm trong menu nhỏ riêng
-                'parent_id'   => 'cms-core-settings',               
+                'parent_id'   => 'cms-core-settings',
                 //Thiết lập tên hiển thị file lang/en/base.blade.php
-                'name'        => 'Product',  
+                'name'        => 'Product',
                 //Tuỳ chỉnh icon hiển thị
-                'icon'        => null,                              
+                'icon'        => null,
                 //route trỏ đến hiển thị form setting
-                'url'         => route('settings.product'),  
+                'url'         => route('settings.product'),
                 //Thiết lập quyền để sử dụng
-                'permissions' => ['settings.product'],              
+                'permissions' => ['settings.product'],
             ]);
         });
 

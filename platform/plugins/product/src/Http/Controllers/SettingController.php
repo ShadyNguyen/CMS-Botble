@@ -35,6 +35,8 @@ class SettingController extends BaseController
     public function getSetting()
     {
         page_title()->setTitle('Product');
+        // $productTypes = require __DIR__ . '/settings.php';
+
         return view('plugins/product::index');
     }
 

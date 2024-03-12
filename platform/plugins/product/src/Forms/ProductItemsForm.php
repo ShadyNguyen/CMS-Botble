@@ -35,6 +35,13 @@ class ProductItemsForm extends FormAbstract
                     'without-buttons' => false, // if true, all buttons will be hidden
                 ],
             ])
+            ->add('quantity', 'number', [ // you can change "text" to "password", "email", "number" or "textarea"
+                'label' => __('Quantity'),
+                'label_attr' => ['class' => 'control-label'], // Add class "required" if that is mandatory field
+                'attr' => [
+                    'placeholder' => __('Quantity here....'),
+                ],
+            ])   
             ->add('price', 'number', [ // you can change "text" to "password", "email", "number" or "textarea"
                 'label' => __('Price'),
                 'label_attr' => ['class' => 'control-label'], // Add class "required" if that is mandatory field

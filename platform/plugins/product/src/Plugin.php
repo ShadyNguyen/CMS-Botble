@@ -16,6 +16,6 @@ class Plugin extends PluginOperationAbstract
         Schema::dropIfExists('product_categories_translations');
 
         Schema::dropIfExists('product_items');
-Schema::dropIfExists('product_items_translations');
+        Schema::dropIfExists('product_items_translations');
     }
 }

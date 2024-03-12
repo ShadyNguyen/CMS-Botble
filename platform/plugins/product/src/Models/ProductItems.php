@@ -14,7 +14,7 @@ class ProductItems extends BaseModel
         'name',
         'description',
         'price',
-
+        'quantity',
         'image',
         'category_id',
         
