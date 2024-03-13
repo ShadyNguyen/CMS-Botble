@@ -37,9 +37,18 @@ class ProductServiceProvider extends ServiceProvider
 
         $this->app['events']->listen(RouteMatched::class, function () {
             DashboardMenu::registerItem([
-                'id' => 'cms-plugins-product',
-                'priority' => 5,
+                'id' => 'cms-plugins-product-general',
+                'priority' => 0,
                 'parent_id' => null,
+                'name' => 'Product Plugins',
+                'icon' => 'fa fa-list',
+                'url' => route('product.index'),
+                'permissions' => ['product.index'],
+            ]);
+            \Botble\Base\Facades\DashboardMenu::registerItem([
+                'id' => 'cms-plugins-product',
+                'priority' => 1,
+                'parent_id' => 'cms-plugins-product-general',
                 'name' => 'plugins/product::product.name',
                 'icon' => 'fa fa-list',
                 'url' => route('product.index'),
@@ -47,19 +56,19 @@ class ProductServiceProvider extends ServiceProvider
             ]);
             \Botble\Base\Facades\DashboardMenu::registerItem([
                 'id' => 'cms-plugins-product-categories',
-                'priority' => 0,
-                'parent_id' => 'cms-plugins-product',
+                'priority' => 2,
+                'parent_id' => 'cms-plugins-product-general',
                 'name' => 'plugins/product::product-categories.name',
-                'icon' => null,
+                'icon' => 'fa fa-list',
                 'url' => route('product-categories.index'),
                 'permissions' => ['product-categories.index'],
             ]);
             \Botble\Base\Facades\DashboardMenu::registerItem([
                 'id' => 'cms-plugins-product-items',
-                'priority' => 0,
-                'parent_id' => 'cms-plugins-product',
+                'priority' => 3,
+                'parent_id' => 'cms-plugins-product-general',
                 'name' => 'plugins/product::product-items.name',
-                'icon' => null,
+                'icon' => 'fa fa-list',
                 'url' => route('product-items.index'),
                 'permissions' => ['product-items.index'],
             ]);

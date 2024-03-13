@@ -1,4 +1,4 @@
-        <footer>Footer</footer>
+        {{-- <footer>Footer</footer>? --}}
         {!! Theme::footer() !!}
     </body>
 </html>
