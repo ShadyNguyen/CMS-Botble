@@ -1,18 +1,11 @@
 <?php
 
-namespace Theme\July\Http\Controllers;
+namespace Theme\Wofl\Http\Controllers;
 
 use Botble\Theme\Http\Controllers\PublicController;
-use Botble\Theme\Facades\Theme;
-use Symfony\Contracts\Cache\CacheInterface;
 
-
-class JulyController extends PublicController
+class WoflController extends PublicController
 {
-    public function getProduct()
-    {
-        return Theme::scope('product')->render();
-    }
     public function getIndex()
     {
         return parent::getIndex();

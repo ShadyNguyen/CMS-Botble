@@ -20,4 +20,4 @@
     </head>
     <body @if (BaseHelper::isRtlEnabled()) dir="rtl" @endif>
         {!! apply_filters(THEME_FRONT_BODY, null) !!}
-        /* <header>Header</header> */
+        <header>Header</header>

@@ -1,7 +1,7 @@
 {
     "id": "botble/{-theme}",
-    "name": "July",
-    "namespace": "Theme\\July\\",
+    "name": "Wofl",
+    "namespace": "Theme\\Wofl\\",
     "author": null,
     "url": null,
     "version": "1.0.0",
