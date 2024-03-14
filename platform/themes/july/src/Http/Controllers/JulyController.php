@@ -9,9 +9,8 @@ use Symfony\Contracts\Cache\CacheInterface;
 
 class JulyController extends PublicController
 {
-    public function getProduct(FoosInterface $foosInterface)
+    public function getProduct()
     {
-
         return Theme::scope('product')->render();
     }
     public function getIndex()
