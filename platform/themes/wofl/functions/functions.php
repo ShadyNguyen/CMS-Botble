@@ -2,7 +2,8 @@
 
 register_page_template([
     'default' => 'Default',
-]);
+    'cateories' => 'Categories',
+]); 
 
 register_sidebar([
     'id'          => 'second_sidebar',
@@ -10,4 +11,7 @@ register_sidebar([
     'description' => 'This is a sample sidebar for wofl theme',
 ]);
 
+
+
 RvMedia::setUploadPathAndURLToPublic();
+
