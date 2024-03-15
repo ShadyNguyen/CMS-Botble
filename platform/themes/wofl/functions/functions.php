@@ -3,6 +3,7 @@
 register_page_template([
     'default' => 'Default',
     'cateories' => 'Categories',
+    'custom-layout' => __('Custom Layout'),
 ]); 
 
 register_sidebar([

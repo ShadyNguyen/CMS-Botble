@@ -6,9 +6,14 @@ use Botble\Theme\Http\Controllers\PublicController;
 use Botble\Theme\Facades\Theme;
 class WoflController extends PublicController
 {
-    public function getExample()
+    // public function getExample()
+    // {
+    //     return Theme::layout('category')->scope('example', ['data' => 123])->render();
+    // }
+
+    public function getHome()
     {
-        return Theme::layout('category')->scope('example', ['data' => 123])->render();
+        return Theme::layout('default')->scope('index')->render();
     }
     public function getIndex()
     {

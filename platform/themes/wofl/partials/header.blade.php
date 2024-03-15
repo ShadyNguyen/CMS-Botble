@@ -92,8 +92,8 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="category.html" class="nav-item nav-link">Categories</a>
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="category.html" class="nav-item nav-link active">Categories</a>
                     <a href="single.html" class="nav-item nav-link">Single News</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
@@ -114,3 +114,17 @@
             </div>
         </nav>
     </div>
+    <!-- Navbar End -->
+
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="breadcrumb bg-transparent m-0 p-0">
+                <a class="breadcrumb-item" href="#">Home</a>
+                <a class="breadcrumb-item" href="#">Category</a>
+                <span class="breadcrumb-item active">Technology</span>
+            </nav>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
