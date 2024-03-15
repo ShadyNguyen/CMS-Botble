@@ -2,7 +2,7 @@
 
 register_page_template([
     'default' => 'Default',
-    'cateories' => 'Categories',
+    'categories' => 'Categories',
 ]); 
 
 register_sidebar([

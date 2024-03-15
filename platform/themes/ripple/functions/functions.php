@@ -14,6 +14,8 @@ use Thetme\Ripple\Fields\ThemeIconField;
 
 register_page_template([
     'no-sidebar' => __('No sidebar'),
+    'content' => __('Content'),
+
 ]);
 
 register_sidebar([
