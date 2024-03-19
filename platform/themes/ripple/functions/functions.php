@@ -93,7 +93,7 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
                 'label_attr' => ['class' => 'control-label'],
                 'value'      => $test,
             ])
-            ->addAfter('content','embedded_video', 'textarea', [
+            ->addAfter('content','embedded_video', 'file', [
                 'label'      => __('Convert_Video'),
                 'label_attr' => ['class' => 'control-label'],
                 'value'      =>$data->getMetaData('embedded_video', true),

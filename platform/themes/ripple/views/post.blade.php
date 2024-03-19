@@ -17,9 +17,9 @@
                 </span>
             @endif
             <span class="post__created-at"><i class="ion-clock"></i>{{ $post->created_at->translatedFormat('M d, Y') }}</span>
-            @if ($post->author->username)
-                <span class="post__author"><i class="ion-android-person"></i><span>{{ $post->author->name }}</span></span>
-            @endif
+            {{-- @if ($post->author->username) --}}
+                <span class="post__author"><i class="ion-android-person"></i><span>{{ get_field($post,'author') }}</span></span>
+            {{-- @endif --}}
 
             @if (!$post->tags->isEmpty())
                 @php
