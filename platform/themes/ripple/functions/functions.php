@@ -10,7 +10,7 @@ use Botble\Page\Models\Page;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request as IlluminateRequest;
-use Thetme\Ripple\Fields\ThemeIconField;
+use Theme\Ripple\Fields\ThemeIconField;
 
 register_page_template([
     'no-sidebar' => __('No sidebar'),

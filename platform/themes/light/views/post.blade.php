@@ -1,0 +1,1 @@
+@php Theme::set('section-name',$post->name); @endphp

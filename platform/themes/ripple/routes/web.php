@@ -1,5 +1,5 @@
 <?php
-
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Support\Facades\Route;
 use Theme\Ripple\Http\Controllers\RippleController;
 
@@ -8,6 +8,7 @@ Route::group(['controller' => RippleController::class, 'middleware' => ['web', '
         // Add your custom route here
         // Ex: Route::get('hello', 'getHello');
 
+        DebugBar::info('INFO!!');
         Route::get('ajax/search', 'getSearch')->name('public.ajax.search');
     });
 });

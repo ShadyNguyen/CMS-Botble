@@ -26,4 +26,4 @@
 @endif
 
 
-<img src="{{ RvMedia::getImageUrl(get_field($page,'cover_image'))}}" alt="">
+{{-- <img src="{{ RvMedia::getImageUrl(get_field($page,'cover_image'))}}" alt=""> --}}

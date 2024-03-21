@@ -126,7 +126,7 @@ class MenuController extends BaseController
         if ($deletedNodes = explode(' ', $deletedNodes)) {
             $menu->menuNodes()->whereIn('id', $deletedNodes)->delete();
         }
-
+        
         $menuNodes = Menu::recursiveSaveMenu((array)json_decode($request->input('menu_nodes'), true), $menu->getKey(), 0);
 
         $request->merge(['menu_nodes', json_encode($menuNodes)]);

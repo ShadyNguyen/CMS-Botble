@@ -90,28 +90,33 @@
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+                    <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse" >
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            {{-- <a href="category.html" class="nav-item nav-link">Categories</a>
-                             --}}
-                            {{-- <a href="single.html" class="nav-item nav-link">Single News</a> --}}
+                            {{-- <a href="index.html" class="nav-item nav-link active">Home</a>                       
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    {{-- @foreach($posts as) --}}
+                        
                                     <a href="#" class="dropdown-item">Menu item 1</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a> --}}
+                            {!!
+                                Menu::renderMenuLocation('main-menu', [
+                                    'options' => ['class' => 'menu sub-menu--slideLeft'],
+                                    'view'    => 'main-menu',
+                                    'style' => 'display:flex',
+                                ])
+                            !!}
                         </div>
-                        <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
+                        {{-- <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
                             <input type="text" class="form-control" placeholder="Keyword">
                             <div class="input-group-append">
                                 <button class="input-group-text text-secondary"><i class="fa fa-search"></i></button>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
+                   
                 </nav>
             </div>
             <!-- Navbar End -->
