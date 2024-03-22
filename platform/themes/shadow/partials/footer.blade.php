@@ -84,12 +84,12 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('themes/light/lib/easing/easing.min.js')}}"></script>
-    <script src="{{asset('themes/light/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('themes/shadow/lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('themes/shadow/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="{{asset('themes/light/mail/jqBootstrapValidation.min.js')}}"></script>
-    <script src="{{asset('themes/light/mail/contact.js')}}"></script>
+    <script src="{{asset('themes/shadow/mail/jqBootstrapValidation.min.js')}}"></script>
+    <script src="{{asset('themes/shadow/mail/contact.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="{{asset('themes/light/js/main.js')}}"></script>
+    <script src="{{asset('themes/shadow/js/main.js')}}"></script>
