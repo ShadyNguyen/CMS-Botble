@@ -4,9 +4,9 @@
    <div class="container-fluid">
     <div class="container">
         <nav class="breadcrumb bg-transparent m-0 p-0">
-            <a class="breadcrumb-item" href="#">Home</a>
+            <a class="breadcrumb-item" href="{{url('/')}}">Home</a>
             <a class="breadcrumb-item" href="#">Category</a>
-            <span class="breadcrumb-item active">Technology</span>
+            <span class="breadcrumb-item active">{{$category->name}}</span>
         </nav>
     </div>
 </div>
@@ -17,15 +17,15 @@
 <div class="container-fluid py-3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Technology</h3>
+                            <h3 class="m-0">{{$category->name}}</h3>
                             <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="position-relative mb-3">
                             @foreach ($posts as $post )
                             <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" loading="lazy"><a href="{{ $post->url }}" title="{{ $post->name }}" class="post__overlay"></a>
@@ -207,7 +207,7 @@
 
             <div class="col-lg-4 pt-3 pt-lg-0">
                 <!-- Social Follow Start -->
-                <div class="pb-3">
+                {{-- <div class="pb-3">
                     <div class="bg-light py-2 px-4 mb-3">
                         <h3 class="m-0">Follow Us</h3>
                     </div>
@@ -234,12 +234,12 @@
                         <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #1AB7EA;">
                             <small class="fab fa-vimeo-v mr-2"></small><small>12,345 Followers</small>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Social Follow End -->
 
                 <!-- Newsletter Start -->
-                <div class="pb-3">
+                {{-- <div class="pb-3">
                     <div class="bg-light py-2 px-4 mb-3">
                         <h3 class="m-0">Newsletter</h3>
                     </div>
@@ -253,17 +253,17 @@
                         </div>
                         <small>Sit eirmod nonumy kasd eirmod</small>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Newsletter End -->
 
                 <!-- Ads Start -->
-                <div class="mb-3 pb-3">
+                {{-- <div class="mb-3 pb-3">
                     <a href=""><img class="img-fluid" src="img/news-500x280-4.jpg" alt=""></a>
-                </div>
+                </div> --}}
                 <!-- Ads End -->
 
                 <!-- Popular News Start -->
-                <div class="pb-3">
+                {{-- <div class="pb-3">
                     <div class="bg-light py-2 px-4 mb-3">
                         <h3 class="m-0">Tranding</h3>
                     </div>
@@ -322,11 +322,11 @@
                             <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Popular News End -->
 
                 <!-- Tags Start -->
-                <div class="pb-3">
+                {{-- <div class="pb-3">
                     <div class="bg-light py-2 px-4 mb-3">
                         <h3 class="m-0">Tags</h3>
                     </div>
@@ -344,7 +344,7 @@
                         <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
                         <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Tags End -->
             </div>
         </div>

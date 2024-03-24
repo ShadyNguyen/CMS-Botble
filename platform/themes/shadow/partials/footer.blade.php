@@ -40,8 +40,11 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Tags</h4>
                 <div class="d-flex flex-wrap m-n1">
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                    @foreach ($categories as $category)
+                    <a href="{{$category->url}}" class="btn btn-sm btn-outline-secondary m-1">{{$category->name}}</a>
+                    @endforeach
+                   
+                    {{-- <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
@@ -51,7 +54,7 @@
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
                     <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a> --}}
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -68,10 +71,10 @@
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5">
         <p class="m-0 text-center">
-            &copy; <a class="font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. 
+            &copy; <a class="font-weight-bold" href="#">CMS BotBle</a>. All Rights Reserved. 
 			
 			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-			Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+			Designed by ShadyNguyen<a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
         </p>
     </div>
     <!-- Footer End -->
