@@ -66,7 +66,25 @@ class HookServiceProvider extends ServiceProvider
                 return view('plugins/blog::partials.posts-short-code-admin-config', compact('attributes', 'content'))
                     ->render();
             });
+            add_shortcode(
+                'featured-news',                                              
+                //tên sẽ hiển thị trong code - [code-block-name][/code-block-name]
+                'Featured News',             
+                //tên sẽ hiển thị trong editor hay dev-tool
+                'Featured News',      
+                //file ngôn ngữ nằm trong resources/lang/en/base.php
+                [$this, 'renderBlog']                                         
+                //function render ra view hiển thị bên front-end                                  
+            );  
+            //set config for this short code
+            shortcode()->setAdminConfig('blog', function ($attributes, $content) {    
+                return view('plugins/blog::partials.posts-short-code-admin-config', compact('attributes', 'content'))
+                    ->render();                                                 
+                    //view to config the short code attributes
+            });
         }
+        
+      
 
         if (function_exists('theme_option')) {
             add_action(RENDERING_THEME_OPTIONS_PAGE, [$this, 'addThemeOptions'], 35);
@@ -129,6 +147,20 @@ class HookServiceProvider extends ServiceProvider
         add_filter('cms_settings_validation_rules', [$this, 'addSettingRules'], 193);
     }
 
+    public function renderBlog($shortcode)
+    {
+        $posts = get_all_posts(true, (int)$shortcode->paginate);
+
+        $view = 'plugins/blog::themes.templates.posts';
+        $themeView = Theme::getThemeNamespace() . '::views.templates.posts';
+
+        if (view()->exists($themeView)) {
+            $view = $themeView;
+        }
+
+        return view($view, compact('posts'))->render();                 
+        //view sẽ hiển thị ra front-end
+    }
     public function addThemeOptions(): void
     {
         $pages = $this->app->make(PageInterface::class)->pluck('name', 'id', ['status' => BaseStatusEnum::PUBLISHED]);

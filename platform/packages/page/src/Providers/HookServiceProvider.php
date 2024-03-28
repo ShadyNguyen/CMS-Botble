@@ -74,7 +74,7 @@ class HookServiceProvider extends ServiceProvider
                 'id' => 'opt-text-subsection-page',
                 'subsection' => true,
                 'icon' => 'fa fa-book',
-                'fields' => [
+                'fields' => [ 
                     [
                         'id' => 'homepage_id',
                         'type' => 'customSelect',
